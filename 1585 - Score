@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char str[100];
+    int t,i,flag,sum;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%s", str);
+        i=0;
+        flag=0;
+        sum=0;
+        while(str[i]!='\0')
+        {
+            if(str[i]=='O')
+            {
+                if(str[i-1]=='O')
+                {
+                    flag=flag+1;
+                }
+                else
+                {
+                    flag=1;
+                }
+                sum+=flag;
+            }
+            i++;
+        }
+        printf("%d\n", sum);
+    }
+    return 0;
+}
