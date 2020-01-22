@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+
+    int n,q,i=1;
+    while(cin>>n>>q , n||q)
+    {
+       vector<int>vecta;
+    vector<int>::iterator itu;
+      int no,qu;
+      while(n--)
+      {
+          cin>>no;
+          vecta.push_back(no);
+      }
+      sort(vecta.begin(),vecta.end());
+      cout<<"CASE# "<<i<<":"<<endl;
+      while(q--)
+      {
+          cin>>qu;
+          itu=find(vecta.begin(),vecta.end(),qu);
+          if(itu!=vecta.end())
+          {
+              cout<<qu<<" found at "<<itu-vecta.begin()+1<<endl ;
+          }
+          else
+          {
+              cout<<qu<<" not found"<<endl;
+          }
+      }
+      i++;
+    }
+    return 0;
+}
